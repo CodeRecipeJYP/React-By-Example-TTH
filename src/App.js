@@ -2,6 +2,22 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+
+  state = {
+    guests: [
+      {
+        name: 'Treasure',
+        isConfirmed: false
+      },
+      {
+        name: 'Nic',
+        isConfirmed: true
+      },
+    ]
+  };
+
+  getTotalInvited = () => this.state.guests.length;
+
   render() {
     return (
       <div className="App">
@@ -21,7 +37,7 @@ class App extends Component {
             </label>
           </div>
           <table className="counter">
-            <tbody>
+            <tbody>3
               <tr>
                 <td>Attending:</td>
                 <td>2</td>
