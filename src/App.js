@@ -8,15 +8,18 @@ class App extends Component {
     guests: [
       {
         name: 'Treasure',
-        isConfirmed: false
+        isConfirmed: false,
+        isEditing: false,
       },
       {
         name: 'Nic',
-        isConfirmed: true
+        isConfirmed: true,
+        isEditing: false,
       },
       {
         name: 'Matt K',
-        isConfirmed: false
+        isConfirmed: false,
+        isEditing: false,
       },
     ]
   };
