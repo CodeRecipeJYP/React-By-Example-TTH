@@ -5,6 +5,7 @@ import GuestList from "./GuestList";
 class App extends Component {
 
   state = {
+    isFiltered: false,
     guests: [
       {
         name: 'Treasure',
@@ -21,7 +22,7 @@ class App extends Component {
         isConfirmed: false,
         isEditing: false,
       },
-    ]
+    ],
   };
 
   toggleGuestPropertyAt = (property, indexToChange) =>
@@ -46,6 +47,9 @@ class App extends Component {
 
   getTotalInvited = () => this.state.guests.length;
 
+  toggleFilter = () =>
+    this.setState({ isFiltered: !this.isFiltered});
+
   render() {
     return (
       <div className="App">
@@ -61,7 +65,11 @@ class App extends Component {
           <div>
             <h2>Invitees</h2>
             <label>
-              <input type="checkbox" /> Hide those who haven't responded
+              <input
+                type="checkbox"
+                onChange={this.toggleFilter}
+                checked={this.state.isFiltered}
+              /> Hide those who haven't responded
             </label>
           </div>
           <table className="counter">
